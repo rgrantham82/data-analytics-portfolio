@@ -1,5 +1,93 @@
-title: "Your Name - Data Analyst"
+# ==========================
+# Site Settings
+# ==========================
+
+title: "Robert Grantham - Data Analyst"
 description: "Showcasing data analytics projects and skills."
+url: "https://rgrantham82.github.io" # Your GitHub Pages URL
+baseurl: "/data-analytics-portfolio" # Your repository name (e.g., /data-analytics-portfolio)
 remote_theme: pages-themes/architect@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
+- jekyll-feed
+
+# ==========================
+# Author Information
+# ==========================
+
+author:
+  name: "Robert Grantham"
+  email: "robertgrantham40@gmail.com" # Replace with your email
+  linkedin: "https://www.linkedin.com/in/robertgrantham82/" # Replace with your LinkedIn URL
+  github: "https://github.com/rgrantham82" # Your GitHub profile
+
+# ==========================
+# Build Settings
+# ==========================
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# ==========================
+# Navigation Links
+# ==========================
+
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about/"
+  - title: "Projects"
+    url: "/projects/"
+  - title: "Contact"
+    url: "/contact/"
+
+# ==========================
+# Exclude Files and Directories
+# ==========================
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# ==========================
+# Google Analytics (Optional)
+# ==========================
+
+# Uncomment and replace 'YOUR_TRACKING_ID' with your actual Google Analytics Tracking ID
+# google_analytics: "YOUR_TRACKING_ID"
+
+# ==========================
+# Permalinks
+# ==========================
+
+permalink: /:categories/:year/:month/:day/:title/
+
+# ==========================
+# Social Links (Optional)
+# ==========================
+
+# Uncomment and add your social media profiles
+# social:
+#   twitter: "https://twitter.com/yourtwitterhandle"
+#   facebook: "https://facebook.com/yourfacebookpage"
+#   instagram: "https://instagram.com/yourinstagramhandle"
+
+# ==========================
+# Custom Collections (Optional)
+# ==========================
+
+# Uncomment and configure if you prefer to use collections instead of data files
+# collections:
+#   projects:
+#     output: true
+#     permalink: /projects/:name/
+
+# ==========================
+# Other Settings
+# ==========================
+
+# Add any additional configurations below
