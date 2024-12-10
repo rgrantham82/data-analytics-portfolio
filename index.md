@@ -60,11 +60,11 @@ permalink: /
     <div class="testimonials-grid">
       <div class="testimonial-card">
         <p>"Robert's expertise in data analytics is unparalleled. His ability to translate complex data into actionable insights has been invaluable to our projects."</p>
-        <h4>- Jane Doe, Senior Manager at ABC Corp</h4>
+        <h4>- Drew B., Copyright Specialist at Vaco</h4>
       </div>
       <div class="testimonial-card">
         <p>"Working with Robert was a pleasure. His attention to detail and commitment to excellence ensured the success of our data-driven initiatives."</p>
-        <h4>- John Smith, Data Scientist at DEF Solutions</h4>
+        <h4>- Dakotah H., Software Engineer at Solar Winds</h4>
       </div>
       <!-- Add more testimonials as needed -->
     </div>
