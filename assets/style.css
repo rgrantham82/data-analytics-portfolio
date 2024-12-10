@@ -1,0 +1,106 @@
+/* assets/css/style.css */
+
+/* Define CSS Variables */
+:root {
+    --primary-color: #1A202C; /* Navy Blue */
+    --secondary-color: #319795; /* Teal */
+    --accent-color: #DD6B20; /* Orange */
+    --background-color: #F7FAFC; /* Light Gray */
+    --text-color: #2D3748; /* Dark Gray */
+}
+
+/* Apply Fonts */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Links */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Buttons */
+.btn, .button {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.btn:hover, .button:hover {
+    background-color: var(--accent-color);
+    opacity: 0.8;
+}
+
+/* Header and Navigation */
+header, nav {
+    background-color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Highlight and Badge */
+.highlight, .badge {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+/* Additional Elements */
+.project-card {
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Form */
+input, textarea {
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .btn, .button {
+        width: 100%;
+        text-align: center;
+    }
+}
