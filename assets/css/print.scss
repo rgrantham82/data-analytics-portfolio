@@ -1,0 +1,134 @@
+/* assets/css/print.css */
+
+/* General Print Styles */
+@media print {
+    /* Reset and Base Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Open Sans', sans-serif;
+        color: #000;
+        background: #fff;
+        line-height: 1.5;
+        padding: 20px;
+    }
+
+    /* Hide Non-Essential Elements */
+    header,
+    nav,
+    footer,
+    .button,
+    .btn,
+    .filter-btn,
+    .success-message,
+    .error-message,
+    .testimonials-section,
+    .featured-projects-section .view-all,
+    .toggle-switch,
+    .switch,
+    aside#sidebar,
+    .contact-preview-section,
+    .testimonials-section {
+        display: none !important;
+    }
+
+    /* Ensure Main Content is Visible */
+    main, 
+    .contact-page-section, 
+    .about-page-section, 
+    .project-card, 
+    .contact-info {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+
+    /* Typography Adjustments */
+    h1, h2, h3, h4, h5, h6 {
+        color: #000;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    p, ul, ol, blockquote, li, a {
+        color: #000;
+        font-size: 12pt;
+        text-decoration: none;
+    }
+
+    a:link:after,
+    a:visited:after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+    }
+
+    /* Remove Background Colors and Borders */
+    .hero-section,
+    .about-preview-section,
+    .contact-page-section,
+    .about-page-section,
+    .project-card,
+    .contact-info {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Image Adjustments */
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    /* Lists Styling */
+    ul, ol {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Tables Styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    table, th, td {
+        border: 1px solid #000;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    /* Blockquotes Styling */
+    blockquote {
+        margin: 20px 0;
+        padding-left: 10px;
+        border-left: 3px solid #ccc;
+        color: #666;
+        font-style: italic;
+    }
+
+    /* Page Breaks */
+    h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, table {
+        page-break-inside: avoid;
+    }
+
+    /* Remove Hyperlink Styling */
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    /* Footer Information (Optional) */
+    .footer-note {
+        text-align: center;
+        font-size: 10pt;
+        margin-top: 20px;
+    }
+}
