@@ -75,37 +75,137 @@ footer {
     border-radius: 3px;
 }
 
-/* Additional Elements */
+/* Projects Section */
+.projects-section {
+    padding: 60px 0;
+    background-color: var(--background-color);
+}
+
+.projects-section h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: var(--primary-color);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
 .project-card {
     background-color: #fff;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    padding: 20px;
-    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Contact Form */
-input, textarea {
-    border: 1px solid #cbd5e0;
-    border-radius: 4px;
-    padding: 10px;
+.project-image {
     width: 100%;
-    box-sizing: border-box;
+    height: auto;
+    display: block;
 }
 
-input:focus, textarea:focus {
-    border-color: var(--secondary-color);
-    outline: none;
+.project-content {
+    padding: 20px;
 }
+
+.project-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.project-content h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.project-content p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.project-tags {
+    margin-bottom: 15px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Image Ratios */
+.is-4by3 {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .btn, .button {
         width: 100%;
         text-align: center;
+    }
+}
+
+.project-content h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.project-content h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.project-content p, .tag, .btn {
+    font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 600px) {
+    .projects-section {
+        padding: 40px 20px;
+    }
+
+    .projects-section h1 {
+        font-size: 2em;
+    }
+
+    .project-content h2 {
+        font-size: 1.3em;
+    }
+
+    .project-content h3 {
+        font-size: 1em;
     }
 }
