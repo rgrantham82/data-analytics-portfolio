@@ -1,0 +1,86 @@
+items:
+  - title: Advanced SQL Solutions
+    subtitle: Mastering Data Queries
+    description: >
+      This project showcases advanced SQL techniques through practical examples, highlighting my ability to extract and analyze data efficiently. From complex joins to optimization strategies, these examples demonstrate my proficiency in database management.
+    image: /assets/images/sql-screenshot.PNG
+    image_ratio: is-4by3
+    link: https://github.com/rgrantham82/SQL_Examples
+    link_text: Explore on GitHub
+    tags: SQL, Data Query, Database
+    github: rgrantham82/SQL_Examples
+    back_content: >
+      <p>Dive deeper into the SQL repository to explore detailed examples and enhance your query skills.</p>
+
+  - title: Fraud Detection System
+    subtitle: AI-driven Fraud Prevention
+    description: >
+      Developed a comprehensive fraud detection system using machine learning algorithms to identify and prevent fraudulent activities. The project involved building predictive models that analyze transaction data to detect suspicious patterns, significantly reducing financial losses and enhancing security measures.
+    image: /assets/images/fraud-detection-plot.png
+    image_ratio: is-4by3
+    link: https://github.com/rgrantham82/fraud-detection
+    link_text: View Project
+    tags: Machine Learning, AI, Fraud Prevention
+    github: rgrantham82/fraud-detection
+    back_content: >
+      <p>Visit the GitHub repository to explore the project implementation and results.</p>
+
+  - title: Forecasting Mini-Course Sales
+    subtitle: Sales Prediction Analysis
+    description: >
+      Analyzed sales data from a mini-course using various forecasting techniques to predict future sales trends. This project involved data preprocessing, model building, and evaluation to provide accurate sales forecasts.
+    image: /assets/images/mini-course-sales-forecast.png
+    image_ratio: is-4by3
+    link: https://www.kaggle.com/robertgrantham/forecasting-mini-course-sales
+    link_text: View Project
+    tags: Forecasting, Sales Analysis, Kaggle
+    back_content: >
+      <p>Explore the project on Kaggle to delve deeper into the sales forecasting methodology.</p>
+
+  - title: Client Segmentation
+    subtitle: Market Analysis and Strategy Development
+    description: >
+      Performed client segmentation using clustering algorithms to identify distinct customer groups based on various attributes for an Austin investment firm. This involved analyzing synthetic client data, visualizing clusters, and developing targeted marketing strategies for each segment.
+    image: /assets/images/client_segmentation.png
+    image_ratio: is-4by3
+    link: /client-segmentation.html
+    link_text: View Project
+    tags: Clustering, Market Analysis
+    back_content: >
+      <p>Explore the detailed client segmentation analysis and strategies developed.</p>
+
+  - title: Predicting Credit Approval
+    subtitle: Credit Risk Assessment
+    description: >
+      Built a predictive model to assess credit approval based on various applicant features. The project utilized machine learning algorithms to predict the likelihood of credit approval, aiding financial institutions in risk management.
+    image: /assets/images/credit-approval-screenshot.PNG
+    image_ratio: is-4by3
+    link: https://www.kaggle.com/robertgrantham/predicting-credit-approval
+    link_text: View Project
+    tags: Predictive Analytics, Credit Risk, Kaggle
+    back_content: >
+      <p>Check out the project on Kaggle to understand the credit risk assessment methodology.</p>
+
+  - title: Austin Violent Crime Insights Dashboard
+    subtitle: Interactive Crime Data Visualization
+    description: >
+      Developed an interactive Tableau dashboard to analyze violent crime data in Austin, TX. The dashboard provides insights into crime patterns and helps in identifying high-risk areas, supporting law enforcement and community safety initiatives.
+    image: /assets/images/austin-violent-crime-dashboard.png
+    image_ratio: is-4by3
+    link: https://public.tableau.com/views/AustinViolentCrimeInsightsDashboard/Dashboard1
+    link_text: View Dashboard
+    tags: Data Visualization, Crime Analysis, Tableau
+    back_content: >
+      <p>View the interactive Tableau dashboard for detailed insights into Austin's crime data.</p>
+
+  - title: Police Shootings Analysis
+    subtitle: In-depth Data Examination
+    description: >
+      Conducted a thorough analysis of police shootings data to uncover trends and insights. This project involves data wrangling, statistical analysis, and visualization to provide a comprehensive overview of police shootings in the United States.
+    image: /assets/images/police-shootings-analysis.png
+    image_ratio: is-4by3
+    link: https://www.kaggle.com/robertgrantham/police-shootings-analysis
+    link_text: View Project
+    tags: Data Analysis, Statistical Analysis, Visualization
+    back_content: >
+      <p>Explore the detailed analysis of police shootings data for insights into law enforcement practices.</p>
