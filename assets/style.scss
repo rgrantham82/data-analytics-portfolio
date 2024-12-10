@@ -5,6 +5,9 @@
 
 /* assets/css/style.css */
 
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600&display=swap');
+
 /* Define CSS Variables */
 :root {
     --primary-color: #1A202C; /* Navy Blue */
@@ -12,83 +15,166 @@
     --accent-color: #DD6B20; /* Orange */
     --background-color: #F7FAFC; /* Light Gray */
     --text-color: #2D3748; /* Dark Gray */
+    --btn-hover-opacity: 0.8;
+    --transition-speed: 0.3s;
+    --border-radius: 5px;
 }
 
-/* Apply Fonts */
+/* Global Styles */
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: var(--primary-color);
+    margin-top: 0;
 }
 
-/* Links */
+p {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+}
+
 a {
     color: var(--secondary-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed) ease;
 }
 
 a:hover {
     color: var(--accent-color);
 }
 
-/* Buttons */
-.btn, .button {
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
     background-color: var(--secondary-color);
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
+    transition: background-color var(--transition-speed) ease, opacity var(--transition-speed) ease;
+    text-align: center;
 }
 
-.btn:hover, .button:hover {
+.btn:hover {
     background-color: var(--accent-color);
-    opacity: 0.8;
+    opacity: var(--btn-hover-opacity);
 }
 
 /* Header and Navigation */
 header, nav {
     background-color: var(--primary-color);
+    padding: 20px 0;
 }
 
-/* Footer */
-footer {
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    font-weight: 600;
+    transition: color var(--transition-speed) ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero-section {
     background-color: var(--primary-color);
     color: #fff;
-    padding: 20px 0;
+    padding: 100px 0;
     text-align: center;
 }
 
-/* Highlight and Badge */
-.highlight, .badge {
-    background-color: var(--accent-color);
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero-section .btn {
+    background-color: var(--secondary-color);
     color: #fff;
-    padding: 5px 10px;
-    border-radius: 3px;
 }
 
-/* Projects Section */
-.projects-section {
-    padding: 60px 0;
-    background-color: var(--background-color);
+.hero-section .btn:hover {
+    background-color: var(--accent-color);
 }
 
-.projects-section h1 {
+/* About Section */
+.about-section {
+    padding: 60px 20px;
+    background-color: #fff;
     text-align: center;
-    margin-bottom: 40px;
+}
+
+.about-section h2 {
     font-size: 2.5em;
+    margin-bottom: 20px;
     color: var(--primary-color);
 }
 
-.projects-grid {
+.about-section p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.about-section .btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.about-section .btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Featured Projects Section */
+.featured-projects-section {
+    padding: 60px 20px;
+    background-color: var(--background-color);
+}
+
+.featured-projects-section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.featured-projects-section .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
@@ -100,7 +186,7 @@ footer {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
 .project-card:hover {
@@ -112,19 +198,25 @@ footer {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: cover;
+}
+
+.is-4by3 {
+    aspect-ratio: 4 / 3;
 }
 
 .project-content {
     padding: 20px;
+    text-align: left;
 }
 
-.project-content h2 {
+.project-content h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
     color: var(--primary-color);
 }
 
-.project-content h3 {
+.project-content h4 {
     font-size: 1.2em;
     margin-bottom: 15px;
     color: var(--secondary-color);
@@ -151,61 +243,315 @@ footer {
     margin-bottom: 5px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--secondary-color);
-    color: #fff;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+.view-all {
+    text-align: center;
+    margin-top: 30px;
 }
 
-.btn:hover {
+.view-all .btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.view-all .btn:hover {
     background-color: var(--accent-color);
 }
 
-/* Image Ratios */
-.is-4by3 {
+/* Contact Section */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.contact-section .btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.contact-section .btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Additional Elements */
+.highlight, .badge {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .projects-section h2,
+    .about-section h2,
+    .contact-section h2 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    nav ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    .project-content h3 {
+        font-size: 1.3em;
+    }
+
+    .project-content h4 {
+        font-size: 1em;
+    }
+
+    .project-content p {
+        font-size: 0.95em;
+    }
+
+    #searchInput {
+        width: 80%;
+    }
+}
+
+/* Search Container */
+.search-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#searchInput {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color var(--transition-speed) ease;
+}
+
+#searchInput:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+/* Filters */
+.filters {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #2D3748; /* Dark Gray */
+    color: #F7FAFC; /* Light Gray */
+}
+
+.dark-mode header, .dark-mode nav, .dark-mode footer {
+    background-color: #1A202C; /* Navy Blue */
+}
+
+.dark-mode a {
+    color: #319795; /* Teal */
+}
+
+.dark-mode a:hover {
+    color: #DD6B20; /* Orange */
+}
+
+.dark-mode .btn {
+    background-color: #319795; /* Teal */
+    color: #fff;
+}
+
+.dark-mode .btn:hover {
+    background-color: #DD6B20; /* Orange */
+}
+
+.dark-mode .project-card {
+    background-color: #4A5568; /* Slightly lighter dark gray */
+    border: 1px solid #2D3748;
+}
+
+.dark-mode .project-content p {
+    color: #E2E8F0; /* Light gray */
+}
+
+.dark-mode .tag {
+    background-color: #DD6B20; /* Orange */
+    color: #fff;
+}
+
+/* Toggle Switch Styles */
+.switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--secondary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fade-In Animations for Sections */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure Project Images Maintain Aspect Ratio */
+.project-image.is-4by3 {
     aspect-ratio: 4 / 3;
     object-fit: cover;
 }
 
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .btn, .button {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-.project-content h2 {
-    font-family: 'Poppins', sans-serif;
-}
-
-.project-content h3 {
-    font-family: 'Poppins', sans-serif;
-}
-
-.project-content p, .tag, .btn {
-    font-family: 'Open Sans', sans-serif;
-}
-
+/* Responsive Adjustments */
 @media (max-width: 600px) {
     .projects-section {
         padding: 40px 20px;
     }
 
-    .projects-section h1 {
+    .projects-section h2,
+    .about-section h2,
+    .contact-section h2 {
         font-size: 2em;
     }
 
-    .project-content h2 {
+    .project-content h3 {
         font-size: 1.3em;
     }
 
-    .project-content h3 {
+    .project-content h4 {
         font-size: 1em;
+    }
+
+    .project-content p {
+        font-size: 0.95em;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    nav ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    #searchInput {
+        width: 80%;
     }
 }
