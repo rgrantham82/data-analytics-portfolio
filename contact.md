@@ -13,7 +13,7 @@ permalink: /contact/
     </p>
     
     <!-- Contact Form -->
-    <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" class="contact-form">
+    <form action="https://formspree.io/f/mbjnwpgb" method="POST" class="contact-form">
       <div class="form-group">
         <label for="name">Name<span class="required">*</span></label>
         <input type="text" id="name" name="name" placeholder="Your Name" required>
