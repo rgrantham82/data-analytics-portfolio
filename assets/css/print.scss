@@ -1,134 +1,171 @@
-/* assets/css/print.css */
+/* Base Print Styles */
+body {
+    font-family: "Serif", Georgia, "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #000;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
 
-/* General Print Styles */
-@media print {
-    /* Reset and Base Styles */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+/* Remove Background Colors for Print */
+* {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
 
-    body {
-        font-family: 'Open Sans', sans-serif;
-        color: #000;
-        background: #fff;
-        line-height: 1.5;
-        padding: 20px;
-    }
+/* Page Layout */
+header, footer, nav, aside {
+    display: none !important;
+}
 
-    /* Hide Non-Essential Elements */
-    header,
-    nav,
-    footer,
-    .button,
-    .btn,
-    .filter-btn,
-    .success-message,
-    .error-message,
-    .testimonials-section,
-    .featured-projects-section .view-all,
-    .toggle-switch,
-    .switch,
-    aside#sidebar,
-    .contact-preview-section,
-    .testimonials-section {
-        display: none !important;
-    }
+main, #content-wrapper, #main-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
-    /* Ensure Main Content is Visible */
-    main, 
-    .contact-page-section, 
-    .about-page-section, 
-    .project-card, 
-    .contact-info {
-        display: block !important;
-        page-break-inside: avoid;
-    }
+.container {
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
 
-    /* Typography Adjustments */
-    h1, h2, h3, h4, h5, h6 {
-        color: #000;
-        font-family: 'Poppins', sans-serif;
-    }
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    margin: 0 0 0.5em 0;
+}
 
-    p, ul, ol, blockquote, li, a {
-        color: #000;
-        font-size: 12pt;
-        text-decoration: none;
-    }
+h1 {
+    font-size: 1.6em;
+}
 
-    a:link:after,
-    a:visited:after {
-        content: " (" attr(href) ")";
-        font-size: 10pt;
-    }
+h2 {
+    font-size: 1.4em;
+}
 
-    /* Remove Background Colors and Borders */
-    .hero-section,
-    .about-preview-section,
-    .contact-page-section,
-    .about-page-section,
-    .project-card,
-    .contact-info {
-        background: none !important;
-        border: none !important;
-        box-shadow: none !important;
-    }
+h3 {
+    font-size: 1.2em;
+}
 
-    /* Image Adjustments */
-    img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-    }
+h4, h5, h6 {
+    font-size: 1em;
+}
 
-    /* Lists Styling */
-    ul, ol {
-        margin-left: 20px;
-        margin-bottom: 10px;
-    }
+/* Links */
+a {
+    color: #000;
+    text-decoration: none;
+}
 
-    /* Tables Styling */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-    }
+a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #333;
+}
 
-    table, th, td {
-        border: 1px solid #000;
-    }
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    page-break-inside: avoid;
+}
 
-    th, td {
-        padding: 8px;
-        text-align: left;
-    }
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #000;
+}
 
-    /* Blockquotes Styling */
-    blockquote {
-        margin: 20px 0;
-        padding-left: 10px;
-        border-left: 3px solid #ccc;
-        color: #666;
-        font-style: italic;
-    }
+th, td {
+    padding: 0.5em;
+    border: 1px solid #000;
+    text-align: left;
+}
 
-    /* Page Breaks */
-    h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, table {
-        page-break-inside: avoid;
-    }
+thead {
+    display: table-header-group;
+}
 
-    /* Remove Hyperlink Styling */
-    a {
-        color: #000;
-        text-decoration: underline;
-    }
+tfoot {
+    display: table-footer-group;
+}
 
-    /* Footer Information (Optional) */
-    .footer-note {
-        text-align: center;
-        font-size: 10pt;
-        margin-top: 20px;
-    }
+tbody tr {
+    page-break-inside: avoid;
+}
+
+/* Lists */
+ul, ol {
+    margin: 0 0 1em 1.5em;
+    padding: 0;
+}
+
+li {
+    margin: 0 0 0.5em 0;
+}
+
+/* Forms */
+form, input, textarea, button, select {
+    display: none;
+}
+
+/* Code and Preformatted Text */
+code, pre {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10pt;
+    background: none;
+    color: #000;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Page Breaks */
+@page {
+    margin: 1in;
+}
+
+.break-before {
+    page-break-before: always;
+}
+
+.break-after {
+    page-break-after: always;
+}
+
+.break-inside {
+    page-break-inside: avoid;
+}
+
+/* Footnotes */
+.footnote, .footnotes {
+    font-size: 10pt;
+    line-height: 1.4;
+    margin: 1em 0;
+}
+
+/* Hide Non-Essential Elements */
+.no-print, .hide-for-print {
+    display: none !important;
+}
+
+/* Footer for Print Pages */
+.print-footer {
+    display: block;
+    text-align: center;
+    font-size: 10pt;
+    margin: 1em 0;
+    color: #666;
+}
+
+.print-footer::before {
+    content: "Printed from {{ site.title }} ({{ site.url }}) on " attr(data-print-date);
 }
