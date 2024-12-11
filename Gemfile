@@ -7,11 +7,10 @@ gem "jekyll", "~> 4.2.0"
 gem "github-pages", group: :jekyll_plugins
 
 # Additional plugins can be added here
-# gem "jekyll-seo-tag"
-# gem "jekyll-sitemap"
-# gem "minima" # If using the minima theme
+gem "jekyll-seo-tag"
+gem "jekyll-sitemap"
 
 # Specify theme if using a custom theme
-# gem "architect", "~> 1.0"
+gem "architect", "~> 1.0"
 
 # Uncomment and add other plugins as needed
