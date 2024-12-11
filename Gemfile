@@ -11,6 +11,6 @@ gem "jekyll-seo-tag"
 gem "jekyll-sitemap"
 
 # Specify theme if using a custom theme
-gem "architect", "~> 1.0"
+# gem "architect", "~> 1.0"
 
 # Uncomment and add other plugins as needed
