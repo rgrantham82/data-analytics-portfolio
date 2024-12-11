@@ -1,31 +1,31 @@
-<!-- _includes/head.html -->
+<!-- _includes/head-custom.html -->
 
-<!-- Required Meta Tags -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Site Title and Description -->
-<title>{{ page.title }} | {{ site.title }}</title>
-<meta name="description" content="{{ site.description }}">
-
-<!-- SEO Meta Tags -->
-<meta name="robots" content="index, follow">
-<meta name="keywords" content="Data Analyst, Data Analytics, SQL, Machine Learning, AI, Data Visualization, Robert Grantham, Portfolio">
-
-<!-- Open Graph Meta Tags for Social Media -->
-<meta property="og:title" content="{{ page.title }} | {{ site.title }}">
-<meta property="og:description" content="{{ site.description }}">
+<!-- Open Graph Meta Tags for Enhanced Social Sharing -->
+<meta property="og:title" content="{{ page.title | escape }} | {{ site.title | escape }}">
+<meta property="og:description" content="{{ site.description | escape }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 <meta property="og:image" content="{{ site.url }}/assets/images/logo.png"> <!-- Replace with your Open Graph image -->
 
-<!-- Favicon -->
-<link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.png" type="image/x-icon">
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title | escape }} | {{ site.title | escape }}">
+<meta name="twitter:description" content="{{ site.description | escape }}">
+<meta name="twitter:image" content="{{ site.url }}/assets/images/twitter-image.png"> <!-- Replace with your Twitter card image -->
+
+<!-- Favicon and Apple Touch Icon -->
+<link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}" type="image/png">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}"> <!-- Optional: Apple Touch Icon -->
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
 
-<!-- Additional Head Elements -->
-{% if page.custom_head %}
-  {{ page.custom_head | markdownify }}
-{% endif %}
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Additional Stylesheets or Scripts -->
+<!-- Example: Custom Head Scripts -->
+<!-- <script src="{{ '/assets/js/custom-script.js' | relative_url }}"></script> -->
+
+<!-- SEO Meta Tags Managed by jekyll-seo-tag Plugin -->
+{% seo %}
