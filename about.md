@@ -12,25 +12,25 @@ Hello! I'm **Robert Grantham**, a dedicated Data Analyst and Freelance Consultan
 
 ## Professional Experience
 
-- **Freelance Data Analyst | Remote (2020 – Present)**
-  - Provide tailored data analysis solutions for clients across various industries.
-  - Designed and implemented an efficient database system for improved operational performance.
-  - Led data-driven initiatives, achieving a $50,000 annual reduction in client expenses.
-  - Delivered research and analysis to resolve potential conflicts, maintaining compliance.
-  - Trained non-technical clients, reducing overhead costs by 9% through better data usage.
+**Freelance Data Analyst** <span class="job-meta">(Remote | 2020 – Present)</span>  
+- Provide tailored data analysis solutions for clients across various industries.  
+- Designed and implemented an efficient database system, improving operational performance.  
+- Led data-driven initiatives resulting in a $50,000 annual reduction in client expenses.  
+- Delivered research and analysis resolving potential conflicts and maintaining compliance.  
+- Trained non-technical clients, reducing overhead costs by 9% through effective data usage.
 
-- **Content Review Analyst | BCforward | YouTube | Austin, TX (2018 – 2020)**
-  - Improved YouTube's algorithms and monetization processes through data analysis.
-  - Reduced false positives by 15%, increasing approval speed.
-  - Enhanced monetization algorithm efficiency by 9%, boosting platform performance.
-  - Analyzed patterns and refined algorithms impacting platform policies and user engagement.
+**Content Review Analyst** <span class="job-meta">(BCforward | YouTube | Austin, TX | 2018 – 2020)</span>  
+- Specialized in content data analysis to improve YouTube’s algorithms and monetization processes.  
+- Reduced false positives by 15%, increasing overall approval speed.  
+- Enhanced monetization algorithm efficiency by 9%, boosting platform performance.  
+- Analyzed data patterns and refined algorithms, impacting platform policies and user engagement.
 
-- **Loss Mitigation Specialist | Regions Mortgage | Hattiesburg, MS (2011 – 2017)**
-  - Applied data analysis to manage mortgage portfolios and mitigate losses.
-  - Supported defaulted borrowers with data-driven loss mitigation solutions.
-  - Managed and analyzed loan data using SQL Server and MSP systems.
-  - Developed ETL pipelines, improving data accuracy and compliance.
-  - Maintained high QA scores, recognized for data integrity and client service.
+**Loss Mitigation Specialist** <span class="job-meta">(Regions Mortgage | Hattiesburg, MS | 2011 – 2017)</span>  
+- Applied data analysis to manage mortgage portfolios and mitigate financial losses.  
+- Supported defaulted borrowers with data-driven loss mitigation solutions.  
+- Managed and analyzed loan data using SQL Server and MSP systems.  
+- Developed ETL pipelines, improving data accuracy and compliance.  
+- Maintained high QA scores, recognized for outstanding data integrity and client service.
 
 ## Education & Training
 
@@ -50,12 +50,12 @@ Hello! I'm **Robert Grantham**, a dedicated Data Analyst and Freelance Consultan
 
 ## Additional Information
 
-- Freelancing with multiple clients on diverse data projects.
-- Skilled in stakeholder collaboration, translating data into actionable insights.
+- Currently freelancing, collaborating with multiple clients on diverse data projects.  
+- Skilled in stakeholder collaboration, translating data into actionable insights for business growth.
 
 ## Personal Interests
 
-Beyond data analytics, I enjoy exploring new technologies, contributing to open-source projects, and staying updated with the latest AI and machine learning trends. In my free time, I love hiking, reading science fiction, and volunteering at local community events.
+Beyond data analytics, I enjoy exploring new technologies, contributing to open-source projects, and staying updated with the latest trends in AI and machine learning. In my free time, I love hiking, reading science fiction, and volunteering at local community events.
 
 ## Contact Me
 
