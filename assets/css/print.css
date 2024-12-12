@@ -1,3 +1,8 @@
+---
+---
+
+@import "{{ site.theme }}";
+
 /* Base Print Styles */
 body {
     font-family: "Serif", Georgia, "Times New Roman", Times, serif;
