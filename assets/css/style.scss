@@ -226,6 +226,48 @@ nav ul li a:hover {
     content: "🔹 ";
 }
 
+.contact-page-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.contact-page-section h1 {
+  margin-bottom: 20px;
+}
+
+.contact-page-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-page-section form input[type="text"],
+.contact-page-section form input[type="email"],
+.contact-page-section form textarea {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.contact-page-section form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #319795;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-page-section form button[type="submit"]:hover {
+  background-color: #2ECC71;
+}
+
+.contact-page-section h2 {
+  margin-top: 40px;
+}
+
 /* Featured Projects Section */
 .featured-projects-section {
     padding: 60px 20px;
