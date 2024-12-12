@@ -58,7 +58,7 @@ exclude:
 # ==========================
 
 # Uncomment and replace 'YOUR_TRACKING_ID' with your actual Google Analytics Tracking ID
- google_analytics: "G-7WZFJ98W4K"
+ google_analytics: G-7WZFJ98W4K
 
 # ==========================
 # Permalinks
