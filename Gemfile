@@ -6,7 +6,7 @@ source "https://rubygems.org"
 gem "github-pages", group: :jekyll_plugins
 
 # Uncomment the following lines if you need additional plugins
-gem "jekyll-seo-tag"
+# gem "jekyll-seo-tag"
 # gem "jekyll-sitemap"
 
 # If you're using a custom theme and it's not covered by github-pages gem, specify it here
