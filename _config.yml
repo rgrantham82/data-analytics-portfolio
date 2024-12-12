@@ -71,8 +71,8 @@ permalink: /:categories/:year/:month/:day/:title/
 # ==========================
 
 # Uncomment and add your social media profiles
-  social:
-    kaggle: "https://kaggle.com/wotan587
+#  social:
+#    kaggle: "https://kaggle.com/wotan587
 #   twitter: "https://twitter.com/yourtwitterhandle"
 #   facebook: "https://facebook.com/yourfacebookpage"
 #   instagram: "https://instagram.com/yourinstagramhandle"
