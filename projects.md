@@ -4,72 +4,147 @@ title: "Projects"
 permalink: /projects/
 ---
 
-# My Projects
+<!-- Filter Buttons -->
+<section class="filters-section section">
+  <div class="container">
+    <h2>Filter Projects</h2>
+    <div class="filters">
+      <button class="filter-btn" data-filter="All">All</button>
+      <button class="filter-btn" data-filter="SQL">SQL</button>
+      <button class="filter-btn" data-filter="Machine Learning">Machine Learning</button>
+      <button class="filter-btn" data-filter="AI">AI</button>
+      <button class="filter-btn" data-filter="Forecasting">Forecasting</button>
+      <button class="filter-btn" data-filter="Clustering">Clustering</button>
+      <button class="filter-btn" data-filter="Data Visualization">Data Visualization</button>
+      <button class="filter-btn" data-filter="Predictive Analytics">Predictive Analytics</button>
+      <button class="filter-btn" data-filter="Credit Risk">Credit Risk</button>
+      <button class="filter-btn" data-filter="Crime Analysis">Crime Analysis</button>
+      <!-- Add more buttons based on your tags -->
+    </div>
+  </div>
+</section>
 
-In the original version of this page, you could filter and search projects interactively by categories and keywords. Here, we’ll present the projects in pure Markdown. You can skim through them or use your browser’s "find" function to locate specific terms.
+<!-- Search Bar -->
+<section class="search-section section">
+  <div class="container">
+    <h2>Search Projects</h2>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search projects...">
+    </div>
+  </div>
+</section>
 
-**Categories (originally available for filtering):**  
-- All
-- SQL
-- Machine Learning
-- AI
-- Forecasting
-- Clustering
-- Data Visualization
-- Predictive Analytics
-- Credit Risk
-- Crime Analysis
+<!-- Projects Grid -->
+<section class="projects-section section">
+  <div class="container">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      {% for project in site.data.projects.items %}
+        <div class="project-card" data-tags="{{ project.tags | replace: ', ', ' ' | downcase }}">
+          <img src="{{ project.image }}" alt="{{ project.title }} Screenshot" class="project-image {{ project.image_ratio }}">
+          <div class="project-content">
+            <h3>{{ project.title }}</h3>
+            <h4>{{ project.subtitle }}</h4>
+            <p>{{ project.description }}</p>
+            <div class="project-tags">
+              {% for tag in project.tags | split: ", " %}
+                <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
+            <a href="{{ project.link }}" class="btn" target="_blank">{{ project.link_text }}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
-*(Note: Without interactive filters, treat these categories as references. You can manually scan for relevant tags in each project.)*
+<!-- No Results Message -->
+<section class="no-results-section section" style="display: none;">
+  <div class="container">
+    <h2>No Projects Found</h2>
+    <p>Try adjusting your search or filter criteria to find the projects you're looking for.</p>
+  </div>
+</section>
 
-## Projects List
+<!-- JavaScript for Filtering and Searching -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    const searchInput = document.getElementById('searchInput');
+    const noResultsSection = document.querySelector('.no-results-section');
 
-Below is a list of projects previously sourced from `site.data.projects.items`. Each includes a brief description, tags, and a link to explore more details.
+    // Function to filter projects
+    const filterProjects = (filter) => {
+      let anyVisible = false;
+      projectCards.forEach(card => {
+        const tags = card.getAttribute('data-tags');
+        if (filter === 'All' || tags.includes(filter.toLowerCase())) {
+          card.style.display = 'block';
+          anyVisible = true;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      noResultsSection.style.display = anyVisible ? 'none' : 'block';
+    };
 
-### Advanced SQL Solutions
-**Subtitle:** Mastering Data Queries  
-**Description:** Showcases advanced SQL techniques through practical examples, highlighting skills in extracting and analyzing data efficiently. Covers complex joins, optimization strategies, and database management.  
-**Tags:** SQL, Data Query, Database  
-[Explore on GitHub](https://github.com/rgrantham82/SQL_Examples)
+    // Function to search projects
+    const searchProjects = (query) => {
+      let anyVisible = false;
+      projectCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const tags = card.querySelector('.project-tags').textContent.toLowerCase();
+        if (title.includes(query) || tags.includes(query)) {
+          card.style.display = 'block';
+          anyVisible = true;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      noResultsSection.style.display = anyVisible ? 'none' : 'block';
+    };
 
-### Fraud Detection System
-**Subtitle:** AI-driven Fraud Prevention  
-**Description:** Implements machine learning algorithms to detect and prevent fraudulent activities. Involves building predictive models analyzing transaction data, reducing financial losses, and enhancing security measures.  
-**Tags:** Machine Learning, AI, Fraud Prevention  
-[View Project](https://github.com/rgrantham82/fraud-detection)
+    // Event listeners for filter buttons
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        filterProjects(filter);
+      });
+    });
 
-### Forecasting Mini-Course Sales
-**Subtitle:** Sales Prediction Analysis  
-**Description:** Analyzes mini-course sales data using forecasting techniques to predict future trends. Involves data preprocessing, model building, and evaluation to provide accurate sales forecasts.  
-**Tags:** Forecasting, Sales Analysis, Kaggle  
-[View Project](https://www.kaggle.com/robertgrantham/forecasting-mini-course-sales)
+    // Event listener for search input
+    searchInput.addEventListener('keyup', () => {
+      const query = searchInput.value.trim().toLowerCase();
+      if (query === '') {
+        // If search is empty, show all projects based on current filter
+        const activeFilter = document.querySelector('.filter-btn.active');
+        const filter = activeFilter ? activeFilter.getAttribute('data-filter') : 'All';
+        filterProjects(filter);
+      } else {
+        // Search across all projects
+        projectCards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          const tags = card.querySelector('.project-tags').textContent.toLowerCase();
+          if (title.includes(query) || tags.includes(query)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        // Show or hide the no results message
+        const visibleCards = Array.from(projectCards).filter(card => card.style.display === 'block');
+        noResultsSection.style.display = visibleCards.length > 0 ? 'none' : 'block';
+      }
+    });
 
-### Client Segmentation
-**Subtitle:** Market Analysis and Strategy Development  
-**Description:** Utilizes clustering algorithms for client segmentation, identifying distinct customer groups based on various attributes for an Austin investment firm. Results inform targeted marketing strategies.  
-**Tags:** Clustering, Market Analysis  
-[View Project](/client-segmentation.html)
-
-### Predicting Credit Approval
-**Subtitle:** Credit Risk Assessment  
-**Description:** Builds a predictive model assessing credit approval likelihood based on applicant features. Aids financial institutions in risk management with machine learning-driven insights.  
-**Tags:** Predictive Analytics, Credit Risk, Kaggle  
-[View Project](https://www.kaggle.com/robertgrantham/predicting-credit-approval)
-
-### Austin Violent Crime Insights Dashboard
-**Subtitle:** Interactive Crime Data Visualization  
-**Description:** Develops a Tableau dashboard analyzing violent crime data in Austin, TX. Identifies crime patterns, supports law enforcement strategies, and highlights high-risk areas.  
-**Tags:** Data Visualization, Crime Analysis, Tableau  
-[View Dashboard](https://public.tableau.com/views/AustinViolentCrimeInsightsDashboard/Dashboard1)
-
-### Police Shootings Analysis
-**Subtitle:** In-depth Data Examination  
-**Description:** Thorough analysis of police shootings data to uncover trends and insights. Involves data wrangling, statistical analysis, and visualization, providing a comprehensive overview of police shootings in the U.S.  
-**Tags:** Data Analysis, Statistical Analysis, Visualization  
-[View Project](https://www.kaggle.com/robertgrantham/police-shootings-analysis)
-
-## If You Don’t Find What You Need
-
-Originally, a "No Results Found" message would appear if no projects matched your filters. In this pure Markdown version, if you don’t see what you’re looking for, try searching by different keywords (using your browser’s `Ctrl+F` or `Cmd+F`) or reviewing the categories listed above.
-
----
+    // Initialize with 'All' filter active
+    const allButton = document.querySelector('.filter-btn[data-filter="All"]');
+    if (allButton) {
+      allButton.classList.add('active');
+    }
+  });
+</script>
