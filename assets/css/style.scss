@@ -29,7 +29,7 @@ a {
 }
 
 a:hover {
-    color: #2ECC71; /* Accent color when hovering links */
+    color: #2ECC71;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,7 +48,6 @@ ul, ol {
     padding-left: 20px;
 }
 
-/* Utility Classes */
 .section {
     padding: 60px 20px;
 }
@@ -175,6 +174,14 @@ nav .navigation li a:hover {
     margin-top: 40px;
     margin-bottom: 20px;
     font-size: 1.5em;
+}
+
+/* Job Meta Style */
+.job-meta {
+    font-size: 0.9em;
+    color: #555;
+    margin-left: 10px;
+    font-weight: normal;
 }
 
 /* Lists in About Page */
@@ -335,7 +342,6 @@ nav .navigation li a:hover {
     background-color: #2ECC71;
 }
 
-/* No Results Section */
 .no-results-section {
     padding: 60px 20px;
     background-color: #F7FAFC;
