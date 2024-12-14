@@ -8,8 +8,10 @@ url: "https://rgrantham82.github.io" # Your GitHub Pages URL
 baseurl: "/data-analytics-portfolio" # Your repository name (e.g., /data-analytics-portfolio)
 remote_theme: pages-themes/architect@v0.2.0
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
-- jekyll-feed
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag (Uncomment if needed)
+  - jekyll-sitemap (Uncomment if needed)
 
 # ==========================
 # Author Information
@@ -17,9 +19,9 @@ plugins:
 
 author:
   name: "Robert Grantham"
-  email: "robertgrantham40@gmail.com" # Replace with your email
-  linkedin: "https://www.linkedin.com/in/robertgrantham82/" # Replace with your LinkedIn URL
-  github: "https://github.com/rgrantham82" # Your GitHub profile
+  email: "robertgrantham40@gmail.com"
+  linkedin: "https://www.linkedin.com/in/robertgrantham82/"
+  github: "https://github.com/rgrantham82"
 
 # ==========================
 # Build Settings
@@ -57,8 +59,8 @@ exclude:
 # Google Analytics (Optional)
 # ==========================
 
-# Uncomment and replace 'YOUR_TRACKING_ID' with your actual Google Analytics Tracking ID
- google_analytics: G-7WZFJ98W4K
+# google_analytics: "YOUR_TRACKING_ID"
+google_analytics: "G-7WZFJ98W4K"
 
 # ==========================
 # Permalinks
@@ -70,9 +72,8 @@ permalink: /:categories/:year/:month/:day/:title/
 # Social Links (Optional)
 # ==========================
 
-# Uncomment and add your social media profiles
-#  social:
-#    kaggle: "https://kaggle.com/wotan587
+social:
+  kaggle: "https://kaggle.com/wotan587"
 #   twitter: "https://twitter.com/yourtwitterhandle"
 #   facebook: "https://facebook.com/yourfacebookpage"
 #   instagram: "https://instagram.com/yourinstagramhandle"
@@ -81,7 +82,6 @@ permalink: /:categories/:year/:month/:day/:title/
 # Custom Collections (Optional)
 # ==========================
 
-# Uncomment and configure if you prefer to use collections instead of data files
 # collections:
 #   projects:
 #     output: true
@@ -90,5 +90,3 @@ permalink: /:categories/:year/:month/:day/:title/
 # ==========================
 # Other Settings
 # ==========================
-
-# Add any additional configurations below
