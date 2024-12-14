@@ -8,7 +8,7 @@ permalink: /
 
 I'm Robert Grantham, a passionate Data Analyst dedicated to transforming data into actionable insights.
 
-[Learn More About Me](#about)
+[Learn More About Me](/about)
 
 ## About Me
 
