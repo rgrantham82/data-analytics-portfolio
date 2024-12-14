@@ -59,4 +59,4 @@ Beyond data analytics, I enjoy exploring new technologies, contributing to open-
 
 ## Contact Me
 
-I'm always open to discussing new projects, opportunities, or just to connect. Feel free to reach out through the [contact page](/contact/) or connect with me on [LinkedIn]({{ site.author.linkedin }}).
+I'm always open to discussing new projects, opportunities, or just to connect. Feel free to reach out through the [contact page](/data-analytics-portfolio/contact/) or connect with me on [LinkedIn]({{ site.author.linkedin }}).
