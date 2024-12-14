@@ -8,7 +8,7 @@ permalink: /
 
 I'm Robert Grantham, a passionate Data Analyst dedicated to transforming data into actionable insights.
 
-[Learn More About Me](/about)
+[Learn More About Me](/data-analytics-portfolio/about)
 
 ## About Me
 
@@ -35,7 +35,7 @@ Below are a few of my highlighted projects. Each project demonstrates key skills
   *Description:* Analyzes sales data from a mini-course using various forecasting techniques to predict future sales trends.  
   [View Project](https://www.kaggle.com/robertgrantham/forecasting-mini-course-sales)
 
-[View All Projects](/projects/)
+[View All Projects](/data-analytics-portfolio/projects/)
 
 ## What Others Say
 
@@ -49,4 +49,4 @@ Below are a few of my highlighted projects. Each project demonstrates key skills
 
 I'm always open to discussing new projects, opportunities, or just to connect. Feel free to reach out through the contact form below or connect with me on LinkedIn.
 
-[Contact Me](/contact/)
+[Contact Me](/data-analytics-portfolio/contact/)
