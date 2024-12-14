@@ -6,25 +6,48 @@ permalink: /contact/
 
 # Contact Me
 
-I'm always open to discussing new projects, opportunities, or just to connect. Please fill out the form below or reach out directly.
+I'm always open to discussing new projects, opportunities, or just to connect. Please fill out the form below or reach out directly via email or LinkedIn.
 
-<form action="https://formspree.io/f/mbjnwpgb" method="POST" style="max-width:600px;">
-**Name:** (required)  
-<input type="text" name="name" placeholder="Your Name" required>
+<form action="https://formspree.io/f/mbjnwpgb" method="POST" class="contact-form">
+  <div class="form-group">
+    <label for="name">Name <span class="required">(required)</span></label>
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+  </div>
 
-**Email:** (required)  
-<input type="email" name="_replyto" placeholder="Your Email" required>
+  <div class="form-group">
+    <label for="email">Email <span class="required">(required)</span></label>
+    <input type="email" id="email" name="_replyto" placeholder="Your Email" required>
+  </div>
 
-**Subject:** (required)  
-<input type="text" name="subject" placeholder="Subject" required>
+  <div class="form-group">
+    <label for="subject">Subject <span class="required">(required)</span></label>
+    <input type="text" id="subject" name="subject" placeholder="Subject" required>
+  </div>
 
-**Message:** (required)  
-<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <div class="form-group">
+    <label for="message">Message <span class="required">(required)</span></label>
+    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+  </div>
 
-<input type="text" name="_gotcha" style="display:none">
+  <!-- Honeypot Field (Spam Protection) -->
+  <input type="text" name="_gotcha" style="display:none">
 
-<button type="submit">Send Message</button>
+  <!-- Submit Button -->
+  <button type="submit" class="btn">Send Message</button>
 </form>
+
+<!-- Success and Error Messages -->
+{% if page.success %}
+<div class="success-message">
+  <p>Your message has been sent successfully! I'll get back to you soon.</p>
+</div>
+{% endif %}
+
+{% if page.error %}
+<div class="error-message">
+  <p>There was an error sending your message. Please try again later.</p>
+</div>
+{% endif %}
 
 ## Direct Contact
 
