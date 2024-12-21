@@ -51,8 +51,5 @@ I'm always open to discussing new projects, opportunities, or just to connect. P
 
 ## Direct Contact
 
-- **Email:** [robertgrantham40@gmail.com](mailto:robertgrantham40@gmail.com)  
-- **Phone:** [512-200-3563](tel:5122003563)  
 - **LinkedIn:** [Connect with me on LinkedIn]({{ site.author.linkedin }})
 
-If the form fails, try again later or use one of the direct contact methods above.
