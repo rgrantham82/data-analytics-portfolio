@@ -5,10 +5,60 @@ document.addEventListener('DOMContentLoaded', () => {
     const successMessage = document.querySelector('.success-message');
     const errorMessage = document.querySelector('.error-message');
     const submitButton = document.querySelector('.contact-form button[type="submit"]');
+    const inputFields = document.querySelectorAll('.contact-form input, .contact-form textarea');
+    
+    // Scroll Animation
+    const scrollElements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    scrollElements.forEach(el => observer.observe(el));
+
+    // Real-time Form Validation
+    const validateField = (field) => {
+        const errorContainer = field.nextElementSibling;
+        if (field.required && !field.value.trim()) {
+            field.classList.add('invalid');
+            if (errorContainer) {
+                errorContainer.textContent = `${field.name} is required.`;
+            }
+            return false;
+        } else {
+            field.classList.remove('invalid');
+            if (errorContainer) {
+                errorContainer.textContent = '';
+            }
+            return true;
+        }
+    };
+
+    inputFields.forEach(field => {
+        field.addEventListener('input', () => validateField(field));
+    });
 
     if (contactForm) {
         contactForm.addEventListener('submit', async function(event) {
             event.preventDefault(); // Prevent default form submission
+
+            let isValid = true;
+            inputFields.forEach(field => {
+                if (!validateField(field)) {
+                    isValid = false;
+                }
+            });
+
+            if (!isValid) {
+                if (errorMessage) {
+                    errorMessage.style.display = 'block';
+                    errorMessage.innerText = 'Please correct the highlighted fields before submitting.';
+                }
+                return;
+            }
 
             // Disable the submit button to prevent multiple submissions
             if (submitButton) {
@@ -79,6 +129,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     submitButton.textContent = 'Send Message';
                 }
             }
+        });
+    }
+
+    // Smooth Scrolling for Anchor Links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetId = link.getAttribute('href').slice(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Back-to-Top Button
+    const backToTopButton = document.querySelector('.back-to-top');
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 });
