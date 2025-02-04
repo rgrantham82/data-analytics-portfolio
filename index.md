@@ -8,8 +8,6 @@ permalink: /
 
 I'm Robert Grantham, a passionate Data Analyst dedicated to transforming data into actionable insights.
 
-[Learn More About Me](/data-analytics-portfolio/about)
-
 ## About Me
 
 With a strong foundation in data migration, visualization, and system optimization, I specialize in leveraging SQL, Python, and ETL processes to deliver effective data-driven solutions. My expertise lies in managing complex datasets, ensuring data integrity, and collaborating with cross-functional teams to support business intelligence initiatives.
