@@ -41,7 +41,7 @@ permalink: /projects/
     <div class="projects-grid">
       {% for project in site.data.projects.items %}
         <div class="project-card" data-tags="{{ project.tags | replace: ', ', ' ' | downcase }}">
-          <img src="{{ project.image }}" alt="{{ project.title }} Screenshot" class="project-image {{ project.image_ratio }}">
+          <img src="{{ project.image | relative_url }}" alt="{{ project.title }} Screenshot" class="project-image {{ project.image_ratio }}">
           <div class="project-content">
             <h3>{{ project.title }}</h3>
             <h4>{{ project.subtitle }}</h4>
@@ -51,7 +51,7 @@ permalink: /projects/
                 <span class="tag">{{ tag }}</span>
               {% endfor %}
             </div>
-            <a href="{{ project.link }}" class="btn" target="_blank">{{ project.link_text }}</a>
+            <a href="{{ project.link | relative_url }}" class="btn" target="_blank" rel="noopener noreferrer">{{ project.link_text }}</a>
           </div>
         </div>
       {% endfor %}

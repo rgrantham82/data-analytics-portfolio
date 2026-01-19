@@ -12,7 +12,7 @@ I'm Robert Grantham, a passionate Data Analyst dedicated to transforming data in
 
 With a strong foundation in data migration, visualization, and system optimization, I specialize in leveraging SQL, Python, and ETL processes to deliver effective data-driven solutions. My expertise lies in managing complex datasets, ensuring data integrity, and collaborating with cross-functional teams to support business intelligence initiatives.
 
-[Read More](/data-analytics-portfolio/about/)
+[Read More]({{ site.baseurl }}/about/)
 
 ## Featured Projects
 
@@ -33,7 +33,7 @@ Below are a few of my highlighted projects. Each project demonstrates key skills
   *Description:* Analyzes sales data from a mini-course using various forecasting techniques to predict future sales trends.  
   [View Project](https://www.kaggle.com/robertgrantham/forecasting-mini-course-sales)
 
-[View All Projects](/data-analytics-portfolio/projects/)
+[View All Projects]({{ site.baseurl }}/projects/)
 
 ## What Others Say
 
@@ -47,4 +47,4 @@ Below are a few of my highlighted projects. Each project demonstrates key skills
 
 I'm always open to discussing new projects, opportunities, or just to connect. Feel free to reach out through the contact form below or connect with me on LinkedIn.
 
-[Contact Me](/data-analytics-portfolio/contact/)
+[Contact Me]({{ site.baseurl }}/contact/)
