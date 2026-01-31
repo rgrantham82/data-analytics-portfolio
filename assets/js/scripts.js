@@ -1,5 +1,17 @@
 // assets/js/scripts.js
 
+const backToTopButton = document.querySelector('.back-to-top');
+if (backToTopButton) {
+  window.addEventListener('scroll', () => {
+    backToTopButton.hidden = !(window.scrollY > 300);
+  });
+
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.querySelector('.contact-form');
     const successMessage = document.querySelector('.success-message');
