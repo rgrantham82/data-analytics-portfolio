@@ -1,31 +1,14 @@
 <!-- _includes/head-custom.html -->
 
-<!-- Open Graph Meta Tags for Enhanced Social Sharing -->
-<meta property="og:title" content="{{ page.title | escape }} | {{ site.title | escape }}">
-<meta property="og:description" content="{{ site.description | escape }}">
-<meta property="og:type" content="website">
-<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-<meta property="og:image" content="{{ site.url }}/assets/images/logo.png"> <!-- Replace with your Open Graph image -->
-
-<!-- Twitter Card Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ page.title | escape }} | {{ site.title | escape }}">
-<meta name="twitter:description" content="{{ site.description | escape }}">
-<meta name="twitter:image" content="{{ site.url }}/assets/images/twitter-image.png"> <!-- Replace with your Twitter card image -->
-
 <!-- Favicon and Apple Touch Icon -->
 <link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}" type="image/png">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}"> <!-- Optional: Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
 
 <!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
 
-<!-- Font Awesome for Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<!-- Additional Stylesheets or Scripts -->
-<!-- Example: Custom Head Scripts -->
-<!-- <script src="{{ '/assets/js/custom-script.js' | relative_url }}"></script> -->
-
-<!-- SEO Meta Tags Managed by jekyll-seo-tag Plugin -->
-{% seo %}
+<!-- Optional: Social preview image override (only if you want a consistent image everywhere) -->
+<meta property="og:image" content="{{ '/assets/images/logo.png' | absolute_url }}">
+<meta name="twitter:image" content="{{ '/assets/images/logo.png' | absolute_url }}">
