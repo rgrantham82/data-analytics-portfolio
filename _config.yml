@@ -4,14 +4,23 @@
 
 title: "Robert Grantham - Data Analyst"
 description: "Showcasing data analytics projects and skills."
-url: "https://rgrantham82.github.io" # Your GitHub Pages URL
-baseurl: "/data-analytics-portfolio" # Your repository name (e.g., /data-analytics-portfolio)
+url: "https://rgrantham82.github.io"
+baseurl: "/data-analytics-portfolio"
+
 remote_theme: pages-themes/architect@v0.2.0
+
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
-  # - jekyll-seo-tag
-  # - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Used by jekyll-seo-tag for social previews
+logo: /assets/images/logo.png
+
+twitter:
+  card: summary_large_image
+  # username: ""   # optional
 
 # ==========================
 # Author Information
@@ -31,10 +40,13 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-# ==========================
-# Navigation Links
-# ==========================
+# Clean URLs for pages (recommended for a portfolio site)
+permalink: pretty
 
+# ==========================
+# Navigation Links (Optional)
+# ==========================
+# Only keep this if you loop over it in your layout.
 navigation:
   - title: "Home"
     url: "/"
@@ -54,38 +66,23 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+  - README.md
 
 # ==========================
-# Google Analytics (Optional)
+# Google Analytics
 # ==========================
 
-# google_analytics: "YOUR_TRACKING_ID"
 google_analytics: "G-7WZFJ98W4K"
 
 # ==========================
-# Permalinks
-# ==========================
-
-permalink: /:categories/:year/:month/:day/:title/
-
-# ==========================
-# Social Links (Optional)
+# Social Links
 # ==========================
 
 social:
   kaggle: "https://kaggle.com/wotan587"
-#   twitter: "https://twitter.com/yourtwitterhandle"
-#   facebook: "https://facebook.com/yourfacebookpage"
-#   instagram: "https://instagram.com/yourinstagramhandle"
-
-# ==========================
-# Custom Collections (Optional)
-# ==========================
-
-# collections:
-#   projects:
-#     output: true
-#     permalink: /projects/:name/
+  # twitter: "https://twitter.com/yourtwitterhandle"
+  # facebook: "https://facebook.com/yourfacebookpage"
+  # instagram: "https://instagram.com/yourinstagramhandle"
 
 # ==========================
 # Other Settings
