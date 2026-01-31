@@ -3,25 +3,32 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" media="screen" type="text/css">
     <link rel="stylesheet" href="{{ '/assets/css/print.css' | relative_url }}" media="print" type="text/css">
 
-    <!-- Include Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" type="text/css">
+    <!-- Font Awesome (consider self-hosting long-term) -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          referrerpolicy="no-referrer">
 
     <!-- SEO Meta Tags -->
     {% seo %}
 
-    <!-- Additional Head Elements -->
+    <!-- Additional Head Elements (OpenGraph, favicon, etc.) -->
     {% include head-custom.html %}
+
+    <meta name="theme-color" content="#1A202C">
   </head>
 
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
     <!-- Back-to-Top Button -->
-    <div class="back-to-top" style="display: none;">
-      <i class="fas fa-chevron-up"></i>
-    </div>
+    <button class="back-to-top" type="button" aria-label="Back to top" hidden>
+      <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
 
     <!-- Header Section -->
     <header>
@@ -44,7 +51,7 @@
     </nav>
 
     <!-- Main Content Wrapper -->
-    <main>
+    <main id="main-content">
       <div class="container">
         {{ content }}
       </div>
@@ -54,25 +61,11 @@
     <footer>
       <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
       <p>Powered by <a href="https://pages.github.com/">GitHub Pages</a></p>
+      <noscript><p>This site works best with JavaScript enabled.</p></noscript>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
-    <script>
-      // Back-to-Top Button Visibility and Functionality
-      const backToTopButton = document.querySelector('.back-to-top');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-          backToTopButton.style.display = 'block';
-        } else {
-          backToTopButton.style.display = 'none';
-        }
-      });
-
-      backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    </script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
   </body>
 </html>
