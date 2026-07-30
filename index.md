@@ -45,6 +45,6 @@ Below are a few of my highlighted projects. Each project demonstrates key skills
 
 ## Get in Touch
 
-I'm always open to discussing new projects, opportunities, or just to connect. Feel free to reach out through the contact form below or connect with me on LinkedIn.
+I'm always open to discussing new projects, opportunities, or just to connect. Feel free to reach out through my [contact page]({{ site.baseurl }}/contact/) or connect with me on [LinkedIn]({{ site.author.linkedin }}).
 
 [Contact Me]({{ site.baseurl }}/contact/)

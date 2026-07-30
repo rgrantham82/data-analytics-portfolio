@@ -67,6 +67,10 @@ exclude:
   - node_modules
   - vendor
   - README.md
+  - .gitignore
+  # Generated locally by the Python companion scripts; not part of the site
+  - "projects/**/analysis_outputs/"
+  - "**/.ipynb_checkpoints/"
 
 # ==========================
 # Google Analytics
