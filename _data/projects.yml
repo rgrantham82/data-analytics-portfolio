@@ -79,3 +79,15 @@ items:
     tags: Data Analysis, Statistical Analysis, Visualization
     back_content: >
       <p>Explore the detailed analysis of police shootings data for insights into law enforcement practices.</p>
+
+  - title: Art Sales Pop-Up Tracker
+    subtitle: Excel + Python EDA Companion
+    description: >
+      A field-ready Excel system for tracking pop-up and street-sale performance: one table per outing, one per transaction line item, with automatic KPI rollups (gross sales, net profit, transactions per outing) and dropdown-validated data entry. Includes a Python companion for CSV export and deeper EDA.
+    # TODO: add a workbook/dashboard screenshot to assets/images/, then uncomment.
+    # image: /assets/images/art-sales-dashboard.png
+    link: /projects/art-sales-popup-tracker/
+    link_text: View Project
+    tags: Excel, KPI Dashboard, Python
+    back_content: >
+      <p>Explore the workbook, data dictionary, and Python EDA companion in the project folder.</p>
