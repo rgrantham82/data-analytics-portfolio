@@ -13,6 +13,8 @@ Highlights:
 - Auto-calculated metrics: duration, transactions, gross sales, taxes, and net profit after costs
 - Qualitative fields (objections, what worked) to connect the numbers to behavior
 
-**Download:** See the workbook in the project repo.
+**Download:** [Art_Sales_Data_Analysis.xlsx]({{ '/projects/art-sales-popup-tracker/Art_Sales_Data_Analysis.xlsx' | relative_url }})
+
+**Docs & code:** [Data dictionary]({{ '/projects/art-sales-popup-tracker/DATA_DICTIONARY.md' | relative_url }}) · [Python EDA script](https://github.com/rgrantham82/data-analytics-portfolio/blob/main/projects/art-sales-popup-tracker/analysis/analyze_art_sales.py) · [Jupyter notebook](https://github.com/rgrantham82/data-analytics-portfolio/blob/main/projects/art-sales-popup-tracker/analysis/Art_Sales_EDA_Companion.ipynb)
 
 **Next steps:** export to CSV + run Python EDA (venue ranking, payment mix, profit per hour, and seasonal trends).
