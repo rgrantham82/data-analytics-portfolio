@@ -1,7 +1,8 @@
 ---
 ---
 
-@import "{{ site.theme }}";
+/* Deliberately does NOT import the theme: everything it brings in is
+   immediately overridden by the reset below. */
 
 /* Base Print Styles */
 body {
