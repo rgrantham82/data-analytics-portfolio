@@ -2,21 +2,15 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" media="screen" type="text/css">
     <link rel="stylesheet" href="{{ '/assets/css/print.css' | relative_url }}" media="print" type="text/css">
 
-    <!-- Font Awesome (consider self-hosting long-term) -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-          referrerpolicy="no-referrer">
-
     <!-- SEO Meta Tags -->
     {% seo %}
 
-    <!-- Additional Head Elements (OpenGraph, favicon, etc.) -->
+    <!-- Additional Head Elements (icons, fonts, OpenGraph, analytics) -->
     {% include head-custom.html %}
 
     <meta name="theme-color" content="#1A202C">
@@ -25,33 +19,31 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <!-- Back-to-Top Button -->
-    <button class="back-to-top" type="button" aria-label="Back to top" hidden>
-      <i class="fas fa-chevron-up" aria-hidden="true"></i>
-    </button>
-
     <!-- Header Section -->
     <header>
       <div class="inner">
-        <a href="{{ '/' | absolute_url }}">
+        <a href="{{ '/' | relative_url }}">
           <h1>{{ site.title }}</h1>
         </a>
         <p class="description">{{ site.description }}</p>
       </div>
     </header>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar (driven by site.navigation in _config.yml) -->
     <nav>
       <ul class="navigation">
-        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
-        <li><a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>About</a></li>
-        <li><a href="{{ '/projects/' | relative_url }}" {% if page.url == '/projects/' %}class="active"{% endif %}>Projects</a></li>
-        <li><a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a></li>
+        {% for item in site.navigation %}
+          {% assign item_url = item.url | relative_url %}
+          <li>
+            <a href="{{ item_url }}"
+               {% if page.url == item.url %}class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </nav>
 
     <!-- Main Content Wrapper -->
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <div class="container">
         {{ content }}
       </div>
@@ -59,13 +51,19 @@
 
     <!-- Footer Section -->
     <footer>
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name | default: site.title }}. All rights reserved.</p>
       <p>Powered by <a href="https://pages.github.com/">GitHub Pages</a></p>
-      <noscript><p>This site works best with JavaScript enabled.</p></noscript>
     </footer>
 
+    <!-- Back-to-Top Button -->
+    <button class="back-to-top" type="button" aria-label="Back to top" hidden>
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+        <path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
     <!-- Scripts -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script defer src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
   </body>
 </html>
