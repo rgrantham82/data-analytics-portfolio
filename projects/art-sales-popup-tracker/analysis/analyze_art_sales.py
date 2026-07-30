@@ -24,6 +24,7 @@ import re
 import sys
 
 import matplotlib
+
 matplotlib.use("Agg")  # no display in CI / headless shells; must precede pyplot
 
 import matplotlib.pyplot as plt
@@ -97,12 +98,24 @@ def load_data(project_dir: str):
             frame["date"] = pd.to_datetime(frame["date"], errors="coerce")
 
     outing_numeric = [
-        "gross_sales", "net_profit", "fees", "travel_parking",
-        "supplies", "tax_collected", "discounts", "duration_hrs",
+        "gross_sales",
+        "net_profit",
+        "fees",
+        "travel_parking",
+        "supplies",
+        "tax_collected",
+        "discounts",
+        "duration_hrs",
     ]
     sales_numeric = [
-        "qty", "unit_price", "discount_per_unit", "cogs_per_unit",
-        "subtotal", "tax", "total", "profit",
+        "qty",
+        "unit_price",
+        "discount_per_unit",
+        "cogs_per_unit",
+        "subtotal",
+        "tax",
+        "total",
+        "profit",
     ]
     for col in outing_numeric:
         if col in outings.columns:
@@ -129,8 +142,7 @@ def compute_kpis(outings: pd.DataFrame, sales: pd.DataFrame) -> pd.DataFrame:
     kpis["gross_sales_total"] = (
         float(outings["gross_sales"].sum())
         if "gross_sales" in outings.columns
-        else float(sales["total"].sum()) if "total" in sales.columns
-        else float("nan")
+        else float(sales["total"].sum()) if "total" in sales.columns else float("nan")
     )
 
     if "net_profit" in outings.columns:
@@ -155,8 +167,12 @@ def compute_kpis(outings: pd.DataFrame, sales: pd.DataFrame) -> pd.DataFrame:
         kpis["profit_per_hour"] = float("nan")
 
     count = kpis["outings_count"]
-    kpis["avg_gross_per_outing"] = kpis["gross_sales_total"] / count if count else float("nan")
-    kpis["avg_profit_per_outing"] = kpis["net_profit_total"] / count if count else float("nan")
+    kpis["avg_gross_per_outing"] = (
+        kpis["gross_sales_total"] / count if count else float("nan")
+    )
+    kpis["avg_profit_per_outing"] = (
+        kpis["net_profit_total"] / count if count else float("nan")
+    )
     return pd.DataFrame([kpis])
 
 
@@ -237,8 +253,12 @@ def save_charts(out_summary: pd.DataFrame, sales: pd.DataFrame, outdir: str):
 
     if "payment_method" in sales.columns:
         pm_counts = (
-            sales["payment_method"].fillna("Unknown").astype(str).str.strip()
-            .value_counts().head(10)
+            sales["payment_method"]
+            .fillna("Unknown")
+            .astype(str)
+            .str.strip()
+            .value_counts()
+            .head(10)
         )
         if not pm_counts.empty:
             ax = pm_counts.plot(kind="bar")
