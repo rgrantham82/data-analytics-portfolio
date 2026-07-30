@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: default
 title: "Art Sales Pop‑Up Tracker (Excel Dashboard)"
 description: "An Excel-based data collection + dashboard system for tracking pop‑up art sales, costs, objections, and performance by venue."
+permalink: /projects/art-sales-popup-tracker/
 ---
 
 I built an Excel tracker to capture pop‑up/street‑sale activity and turn it into a usable dashboard without needing any extra tools on the street. The design goal was simple: **fast entry in the field, clean enough data for real analysis later**.
