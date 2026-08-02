@@ -4,6 +4,111 @@
 @import "{{ site.theme }}";
 
 /* =========================================================
+   THEME NEUTRALIZATION — read before deleting any of this
+   ---------------------------------------------------------
+   This repo ships its own _layouts/default.html but still imports the
+   pages-themes/architect stylesheet above. That stylesheet was written
+   for the theme's OWN markup, so a handful of its selectors land on our
+   elements purely by accident. Every rule in this block undoes exactly
+   one of those collisions. Verified line-by-line against:
+   github.com/pages-themes/architect/blob/master/_sass/jekyll-theme-architect.scss
+   ========================================================= */
+
+/* 1. THE BIG ONE. The theme declares `#main-content { float: left;
+      width: 690px; }`. Our <main> now uses id="content" to dodge it, but
+      this reset stays as insurance against a future rename. Without it,
+      <main> becomes a floated 690px column, leaves normal flow, and the
+      <footer> rides up to sit alongside the top of the page content. */
+main,
+#content,
+#main-content {
+    float: none;
+    clear: both;
+    width: auto;
+}
+
+/* 2. The theme's h4/h5/h6 ::before rules are NOT scoped to #main-content,
+      so every project subtitle picked up a pale blue "////" plus a
+      negative left margin. */
+h1::before, h2::before, h3::before,
+h4::before, h5::before, h6::before {
+    content: none;
+    padding-right: 0;
+    margin-left: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-indent: 0;
+}
+
+/* 3. The theme tiles a JPEG behind <body>; our background-color alone
+      never removed the image. */
+body {
+    background-image: none;
+}
+
+/* 4. The theme wraps every <form> in a grey 20px box, which fought with
+      the contact form's own styling. */
+form {
+    padding: 0;
+    background: transparent;
+}
+
+/* 5. `list-style-position: inside` broke hanging indents on wrapped
+      bullet text throughout the About page. */
+ul, ol {
+    list-style-position: outside;
+}
+
+/* 6. The theme centres every table cell and thins the font to 300. */
+td {
+    text-align: left;
+    font-weight: inherit;
+}
+
+/* 7. `.inner` was pinned to a fixed 940px. The header uses .header-inner
+      now, but neutralize the class in case it reappears in a page. */
+.inner {
+    width: auto;
+}
+
+/* --- Optional: want the original hand-drawn Architect look back? ---
+   The blue slashes and 'Architects Daughter' headings above were never
+   intentional — they leaked in through #main-content. If you decide you
+   liked them, delete rule 2 and add the font deliberately instead:
+
+   h1, h2, h3 { font-family: 'Architects Daughter', cursive; }
+   ------------------------------------------------------------------ */
+
+/* =========================================================
+   Page Skeleton — sticky footer
+   ---------------------------------------------------------
+   Guarantees the footer is the last thing on the page and sits at the
+   bottom of the viewport on short pages, rather than floating wherever
+   the previous layout happened to leave it.
+   ========================================================= */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, nav, footer {
+    flex: 0 0 auto;
+}
+
+main {
+    flex: 1 0 auto;
+    padding: 40px 0;
+}
+
+/* Pages built from .section blocks bring their own top padding. */
+main .section:first-child {
+    padding-top: 0;
+}
+
+/* =========================================================
    Global Styles
    ========================================================= */
 
@@ -180,10 +285,19 @@ header {
     text-align: center;
 }
 
+/* The theme sets `header h1 { width: 540px }`, which left the site title
+   sitting off-centre next to a correctly centred tagline. */
 header h1 {
+    width: auto;
     font-size: 2.5em;
     margin-bottom: 10px;
     color: #fff;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 header a:hover h1 {
@@ -520,11 +634,28 @@ nav .navigation li a.active {
    ========================================================= */
 
 footer {
+    /* margin-top comes from the theme (40px) and left a white band above
+       the footer once the layout was un-floated. */
+    margin-top: 0;
     background-color: #2D3748;
     color: #fff;
-    padding: 20px 0;
+    padding: 24px 0;
     text-align: center;
     font-size: 0.9em;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-contact {
+    margin-bottom: 8px;
+}
+
+.footer-contact a {
+    white-space: nowrap;
 }
 
 footer p {
@@ -563,5 +694,9 @@ footer a:hover {
 
     .projects-grid {
         gap: 25px;
+    }
+
+    main {
+        padding: 25px 0;
     }
 }
